@@ -1,0 +1,1443 @@
+{
+	"info": {
+		"_postman_id": "79cda571-e2d7-4915-8641-7b478abf9c29",
+		"name": "Binar Secondhand",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30537883"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Success Sign Up",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"let random = (Math.random() + 1).toString(36).substring(7);",
+									"let email = random + \"@gmail.com\";",
+									"pm.globals.set(\"randEmail\", email);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": {\n    \"name\": \"Tester\",\n    \"email\": \"testing123@test.com\",\n    \"password\": \"asdf1234\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlBinar}}/users.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"users.json"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sign Up",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"name\": \"Regie Wibhiyanto\",\n        \"email\": \"rwibhiyanto@binaracademy.org\",\n        \"password\": \"passwordBinar\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baserUrlBinar}}/users",
+									"host": [
+										"{{baserUrlBinar}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 May 2023 12:04:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Link",
+									"value": "</assets/application-8719702cfbda8df80ef05ec97d6e3439f691b635cf6f90772d44af13d07cdc5f.css>; rel=preload; as=style; nopush"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5c0bd705019d04d6969825e674a7f029\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "_binar_playground_secondhand_marketplace_session=XE1IVHxOhQ7fuhCpU%2FAO3l0a2yRFYbWPPUjvZ7rO5NUAtDrfFhETget11KmW5KObasqFfY%2FdLOT1Igv3r4KjdMHkEUkSv3twxh6%2BcSJUMLfczjfffcJBe%2FzTSn%2BkwHPXeve1Zn7ySOFTIBV18XP84hcqeqAOBmXiamnAbQ6qBTupECR9BAxr3A494b0%2BlDWz8WliNiJPdCdbTeDKAOA7jHBlhzMTyEKrqCI1Ca5mKLf71%2F316ZElZfSWw%2BeBKAOgfGci0MmqpcKI5ANVeVCLpmBG11JcJZ6kn6j5bA8sjP6NuxWoty7sjIzkjznfX4bJ3kq1936I17c%3D--zi%2FSU8mnAsNPow2Q--aV2CPOKyrpKdODuMz454pQ%3D%3D; path=/; secure; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "d01d3cba-2459-4672-a710-b798dcc46e26"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.036576"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html>\n    <head>\n        <title>SecondHand</title>\n        <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n        <meta name=\"csrf-param\" content=\"authenticity_token\" />\n        <meta name=\"csrf-token\" content=\"BK0rIDd4MSwjEnQ0oRF9ByCUL7RINRwCY-PruLnCzevlgUT3oJyqis5dROZqJnJhZ0tLMv8zT5MAT1AvmwHDJA\" />\n        <link rel=\"stylesheet\" href=\"/assets/application-8719702cfbda8df80ef05ec97d6e3439f691b635cf6f90772d44af13d07cdc5f.css\" media=\"all\" data-turbo-track=\"reload\" />\n        <script src=\"/assets/application-129503345137b5d28c19109dabc42b97ed2206ca1c50e66a68eac5b5353990e4.js\" data-turbo-track=\"reload\" defer=\"defer\"></script>\n    </head>\n    <body>\n        <nav class=\"navbar navbar-expand-lg navbar-light bg-white shadow fixed-top\">\n            <div class=\"container\">\n                <a class=\"navbar-brand px-5 py-3\" href=\"/\"></a>\n                <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <form class=\"d-flex ms-0 ms-lg-4 my-4 my-lg-0\" method=\"GET\" action=\"/\" role=\"search\">\n                        <div class=\"input-group rounded-pill bg-light p-1 search\">\n                            <input name=\"q\" class=\"form-control bg-transparent border-0 form-search\" type=\"search\" placeholder=\"Cari di sini ...\" aria-label=\"Search\" value=\"\">\n                            <i class=\"bi bi-search input-group-text bg-transparent border-0\"></i>\n                        </div>\n                    </form>\n                    <div class=\"ms-auto\">\n                        <a class=\"btn btn-primary\" href=\"/users/sign_in\">\n                            <i class=\"bi bi-arrow-bar-right\"></i>\n  Masuk\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </nav>\n        <section class=\"pt-5 mt-5\">\n            <section class=\"mt-lg-5 mb-5 w-100 d-flex gap-lg-5\">\n                <div class=\"promo left bg-success rounded-end flex-grow-1 align-self-center d-none d-lg-block\"></div>\n                <div class=\"promo center flex-grow-1 bg-warning rounded-lg-4 rounded-0\">\n                    <div class=\"row p-5\">\n                        <div class=\"col\">\n                            <h1 class=\"fw-bold mb-4\">Bulan Ramadhan\n                                <br>Banyak diskon!\n                            </h1>\n                            <h6 class=\"fs-5 fw-normal\" >Diskon Hingga</h6>\n                            <h5 class=\"display-6 text-danger fw-bold\">60%</h5>\n                        </div>\n                        <div class=\"col\">\n      </div>\n                    </div>\n                </div>\n                <div class=\"promo right bg-info rounded-start flex-grow-1 align-self-center d-none d-lg-block\"></div>\n            </section>\n            <section class=\"container\">\n                <h5 class=\"fw-bold mb-4\">Telusuri Kategori</h5>\n                <nav class=\"nav row gap-4 px-2 px-lg-0\">\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center active\" href=\"/\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n      Semua\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=1\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Hobi\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=2\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Kendaraan\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=3\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Baju\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=4\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Elektronik\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=5\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Kesehatan\n                    </a>\n                </nav>\n                <div class=\"row my-5 g-5\" id='products'>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1947\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">Tunik Motif</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 125.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1946\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">Tunik Motif</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 125.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1945\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaGcwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5a369465a8591754f1ee1d2823d8d36e8193c4d4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--921aa4168288baa76b1e1581eb3aee5dc86a0e6e/RE2_remake_PS4_cover_art.png\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 RE 2</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Hobi</p>\n                                    <h5 class=\"card-text\">Rp 111.111.111</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1943\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1939\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ0UwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a1b35d66963cc04e83a9d8934e102a2a9854e3c4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--b50863606d6ba2f597650ed7335384ba20cf4712/Resident_Evil_4.jpg\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 100.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1938\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ00wIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f10239f2035e57a6356ebbc581ff295c55833bf6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--b50863606d6ba2f597650ed7335384ba20cf4712/Resident_Evil_3.jpg\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 95.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1937\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm96IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8dee09bbfa8ec914438d449d7256a7db94ab5183/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--921aa4168288baa76b1e1581eb3aee5dc86a0e6e/RE2_remake_PS4_cover_art.png\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 90.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1936\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1935\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1934\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div role=\"navigation\" aria-label=\"Pagination\" class=\"d-flex gap-4 align-items-center justify-content-center my-5\">\n                        <span class=\"previous_page disabled\" aria-disabled=\"true\">&#8592; Previous</span>\n                        <a class=\"next_page\" rel=\"next\" href=\"/?page=2\">Next &#8594;</a>\n                    </div>\n                </div>\n            </section>\n            <div class=\"sticky-bottom d-flex align-items-center justify-content-center py-4\">\n                <a class=\"btn btn-primary btn-lg rounded-4 d-inline-flex align-items-center justify-content-space-between px-5\" href=\"/products/new\">\n                    <i class=\"bi bi-plus fs-2 me-3\"></i>\n                    <span class=\"fs-6\">Jual</span>\n                </a>\n            </div>\n        </section>\n    </body>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "Failed SignUp User Already Taken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": {\n    \"name\": \"Tester\",\n    \"email\": \"testing123@test.com\",\n    \"password\": \"asdf1234\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlBinar}}/users.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"users.json"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sign Up",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"name\": \"Regie Wibhiyanto\",\n        \"email\": \"rwibhiyanto@binaracademy.org\",\n        \"password\": \"passwordBinar\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baserUrlBinar}}/users",
+									"host": [
+										"{{baserUrlBinar}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 May 2023 12:04:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Link",
+									"value": "</assets/application-8719702cfbda8df80ef05ec97d6e3439f691b635cf6f90772d44af13d07cdc5f.css>; rel=preload; as=style; nopush"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5c0bd705019d04d6969825e674a7f029\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "_binar_playground_secondhand_marketplace_session=XE1IVHxOhQ7fuhCpU%2FAO3l0a2yRFYbWPPUjvZ7rO5NUAtDrfFhETget11KmW5KObasqFfY%2FdLOT1Igv3r4KjdMHkEUkSv3twxh6%2BcSJUMLfczjfffcJBe%2FzTSn%2BkwHPXeve1Zn7ySOFTIBV18XP84hcqeqAOBmXiamnAbQ6qBTupECR9BAxr3A494b0%2BlDWz8WliNiJPdCdbTeDKAOA7jHBlhzMTyEKrqCI1Ca5mKLf71%2F316ZElZfSWw%2BeBKAOgfGci0MmqpcKI5ANVeVCLpmBG11JcJZ6kn6j5bA8sjP6NuxWoty7sjIzkjznfX4bJ3kq1936I17c%3D--zi%2FSU8mnAsNPow2Q--aV2CPOKyrpKdODuMz454pQ%3D%3D; path=/; secure; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "d01d3cba-2459-4672-a710-b798dcc46e26"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.036576"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html>\n    <head>\n        <title>SecondHand</title>\n        <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n        <meta name=\"csrf-param\" content=\"authenticity_token\" />\n        <meta name=\"csrf-token\" content=\"BK0rIDd4MSwjEnQ0oRF9ByCUL7RINRwCY-PruLnCzevlgUT3oJyqis5dROZqJnJhZ0tLMv8zT5MAT1AvmwHDJA\" />\n        <link rel=\"stylesheet\" href=\"/assets/application-8719702cfbda8df80ef05ec97d6e3439f691b635cf6f90772d44af13d07cdc5f.css\" media=\"all\" data-turbo-track=\"reload\" />\n        <script src=\"/assets/application-129503345137b5d28c19109dabc42b97ed2206ca1c50e66a68eac5b5353990e4.js\" data-turbo-track=\"reload\" defer=\"defer\"></script>\n    </head>\n    <body>\n        <nav class=\"navbar navbar-expand-lg navbar-light bg-white shadow fixed-top\">\n            <div class=\"container\">\n                <a class=\"navbar-brand px-5 py-3\" href=\"/\"></a>\n                <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <form class=\"d-flex ms-0 ms-lg-4 my-4 my-lg-0\" method=\"GET\" action=\"/\" role=\"search\">\n                        <div class=\"input-group rounded-pill bg-light p-1 search\">\n                            <input name=\"q\" class=\"form-control bg-transparent border-0 form-search\" type=\"search\" placeholder=\"Cari di sini ...\" aria-label=\"Search\" value=\"\">\n                            <i class=\"bi bi-search input-group-text bg-transparent border-0\"></i>\n                        </div>\n                    </form>\n                    <div class=\"ms-auto\">\n                        <a class=\"btn btn-primary\" href=\"/users/sign_in\">\n                            <i class=\"bi bi-arrow-bar-right\"></i>\n  Masuk\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </nav>\n        <section class=\"pt-5 mt-5\">\n            <section class=\"mt-lg-5 mb-5 w-100 d-flex gap-lg-5\">\n                <div class=\"promo left bg-success rounded-end flex-grow-1 align-self-center d-none d-lg-block\"></div>\n                <div class=\"promo center flex-grow-1 bg-warning rounded-lg-4 rounded-0\">\n                    <div class=\"row p-5\">\n                        <div class=\"col\">\n                            <h1 class=\"fw-bold mb-4\">Bulan Ramadhan\n                                <br>Banyak diskon!\n                            </h1>\n                            <h6 class=\"fs-5 fw-normal\" >Diskon Hingga</h6>\n                            <h5 class=\"display-6 text-danger fw-bold\">60%</h5>\n                        </div>\n                        <div class=\"col\">\n      </div>\n                    </div>\n                </div>\n                <div class=\"promo right bg-info rounded-start flex-grow-1 align-self-center d-none d-lg-block\"></div>\n            </section>\n            <section class=\"container\">\n                <h5 class=\"fw-bold mb-4\">Telusuri Kategori</h5>\n                <nav class=\"nav row gap-4 px-2 px-lg-0\">\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center active\" href=\"/\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n      Semua\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=1\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Hobi\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=2\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Kendaraan\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=3\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Baju\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=4\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Elektronik\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=5\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Kesehatan\n                    </a>\n                </nav>\n                <div class=\"row my-5 g-5\" id='products'>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1947\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">Tunik Motif</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 125.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1946\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">Tunik Motif</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 125.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1945\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaGcwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5a369465a8591754f1ee1d2823d8d36e8193c4d4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--921aa4168288baa76b1e1581eb3aee5dc86a0e6e/RE2_remake_PS4_cover_art.png\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 RE 2</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Hobi</p>\n                                    <h5 class=\"card-text\">Rp 111.111.111</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1943\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1939\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ0UwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a1b35d66963cc04e83a9d8934e102a2a9854e3c4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--b50863606d6ba2f597650ed7335384ba20cf4712/Resident_Evil_4.jpg\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 100.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1938\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ00wIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f10239f2035e57a6356ebbc581ff295c55833bf6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--b50863606d6ba2f597650ed7335384ba20cf4712/Resident_Evil_3.jpg\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 95.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1937\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm96IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8dee09bbfa8ec914438d449d7256a7db94ab5183/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--921aa4168288baa76b1e1581eb3aee5dc86a0e6e/RE2_remake_PS4_cover_art.png\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 90.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1936\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1935\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1934\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div role=\"navigation\" aria-label=\"Pagination\" class=\"d-flex gap-4 align-items-center justify-content-center my-5\">\n                        <span class=\"previous_page disabled\" aria-disabled=\"true\">&#8592; Previous</span>\n                        <a class=\"next_page\" rel=\"next\" href=\"/?page=2\">Next &#8594;</a>\n                    </div>\n                </div>\n            </section>\n            <div class=\"sticky-bottom d-flex align-items-center justify-content-center py-4\">\n                <a class=\"btn btn-primary btn-lg rounded-4 d-inline-flex align-items-center justify-content-space-between px-5\" href=\"/products/new\">\n                    <i class=\"bi bi-plus fs-2 me-3\"></i>\n                    <span class=\"fs-6\">Jual</span>\n                </a>\n            </div>\n        </section>\n    </body>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "Success Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var token = jsonData.session.token;",
+									"",
+									"pm.globals.set(\"token\", token);",
+									"",
+									"pm.test(\"Assert login\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    var requestBody = JSON.parse(pm.request.body.raw);",
+									"    pm.expect(jsonData.user.email).to.eql(requestBody.user.email);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"email\": \"testing123@test.com\",\n        \"password\": \"asdf1234\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlBinar}}/users/sign_in.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"users",
+								"sign_in.json"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"email\": \"rwibhiyanto@binaracademy.org\",\n        \"password\": \"passwordBinar\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baserUrlBinar}}/users/sign_in",
+									"host": [
+										"{{baserUrlBinar}}"
+									],
+									"path": [
+										"users",
+										"sign_in"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 May 2023 12:06:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Link",
+									"value": "</assets/application-8719702cfbda8df80ef05ec97d6e3439f691b635cf6f90772d44af13d07cdc5f.css>; rel=preload; as=style; nopush"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"584c5f9cf4726538e2b050a9f605c2cf\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "_binar_playground_secondhand_marketplace_session=Z1utVlezVBGDpxSa7734uuv7tsS9G5%2FcjbDsbPew7OmbFNm%2ByACYXtE1%2BPGaDrpH%2F18XWqiX65%2F81Jh5Sc3gb3ID0CkHEN0Lg5jLLxQ8fmPZ1bG3nqG0eT0fmNA1%2BxYFRWq5dAhTT4BV9NSH5DcTVRoL9eahiZto%2FGcNcyGQxpnLbGJk2fk50eRWTuveFq46%2F9Sh5wjOd5Bwa4yz7ety6DNgAirIPZpWD0uxymVpSm73sDJPqIiCAQ%2BGKKO3VAGTYjXNgEqLZe5RkClTSzksscCFDyffmi%2FNE8DzuvThp2FojUD0vB7XKO%2Fsm03O2g8Bx9d4S%2BkN4LA%3D--cwT0m18rX2139VSr--e9%2FRBhV9suAYi%2BPxatn6Yg%3D%3D; path=/; secure; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "0ee2812c-841f-496a-8845-cfd987bd192d"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.037802"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html>\n    <head>\n        <title>SecondHand</title>\n        <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n        <meta name=\"csrf-param\" content=\"authenticity_token\" />\n        <meta name=\"csrf-token\" content=\"HbU1b1cbZ-DINpI2Ah1Kt4tlkq2JM3tsyTCc4ZGZf778mVq4wP_8RiV5ouTJKkXRzLr2Kz41KP2qnCd2s1pxcQ\" />\n        <link rel=\"stylesheet\" href=\"/assets/application-8719702cfbda8df80ef05ec97d6e3439f691b635cf6f90772d44af13d07cdc5f.css\" media=\"all\" data-turbo-track=\"reload\" />\n        <script src=\"/assets/application-129503345137b5d28c19109dabc42b97ed2206ca1c50e66a68eac5b5353990e4.js\" data-turbo-track=\"reload\" defer=\"defer\"></script>\n    </head>\n    <body>\n        <nav class=\"navbar navbar-expand-lg navbar-light bg-white shadow fixed-top\">\n            <div class=\"container\">\n                <a class=\"navbar-brand px-5 py-3\" href=\"/\"></a>\n                <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <form class=\"d-flex ms-0 ms-lg-4 my-4 my-lg-0\" method=\"GET\" action=\"/\" role=\"search\">\n                        <div class=\"input-group rounded-pill bg-light p-1 search\">\n                            <input name=\"q\" class=\"form-control bg-transparent border-0 form-search\" type=\"search\" placeholder=\"Cari di sini ...\" aria-label=\"Search\" value=\"\">\n                            <i class=\"bi bi-search input-group-text bg-transparent border-0\"></i>\n                        </div>\n                    </form>\n                    <div class=\"ms-auto\">\n                        <a class=\"btn btn-primary\" href=\"/users/sign_in\">\n                            <i class=\"bi bi-arrow-bar-right\"></i>\n  Masuk\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </nav>\n        <section class=\"pt-5 mt-5\">\n            <section class=\"mt-lg-5 mb-5 w-100 d-flex gap-lg-5\">\n                <div class=\"promo left bg-success rounded-end flex-grow-1 align-self-center d-none d-lg-block\"></div>\n                <div class=\"promo center flex-grow-1 bg-warning rounded-lg-4 rounded-0\">\n                    <div class=\"row p-5\">\n                        <div class=\"col\">\n                            <h1 class=\"fw-bold mb-4\">Bulan Ramadhan\n                                <br>Banyak diskon!\n                            </h1>\n                            <h6 class=\"fs-5 fw-normal\" >Diskon Hingga</h6>\n                            <h5 class=\"display-6 text-danger fw-bold\">60%</h5>\n                        </div>\n                        <div class=\"col\">\n      </div>\n                    </div>\n                </div>\n                <div class=\"promo right bg-info rounded-start flex-grow-1 align-self-center d-none d-lg-block\"></div>\n            </section>\n            <section class=\"container\">\n                <h5 class=\"fw-bold mb-4\">Telusuri Kategori</h5>\n                <nav class=\"nav row gap-4 px-2 px-lg-0\">\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center active\" href=\"/\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n      Semua\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=1\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Hobi\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=2\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Kendaraan\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=3\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Baju\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=4\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Elektronik\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=5\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Kesehatan\n                    </a>\n                </nav>\n                <div class=\"row my-5 g-5\" id='products'>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1947\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">Tunik Motif</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 125.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1946\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">Tunik Motif</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 125.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1945\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaGcwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5a369465a8591754f1ee1d2823d8d36e8193c4d4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--921aa4168288baa76b1e1581eb3aee5dc86a0e6e/RE2_remake_PS4_cover_art.png\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 RE 2</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Hobi</p>\n                                    <h5 class=\"card-text\">Rp 111.111.111</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1943\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1939\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ0UwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a1b35d66963cc04e83a9d8934e102a2a9854e3c4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--b50863606d6ba2f597650ed7335384ba20cf4712/Resident_Evil_4.jpg\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 100.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1938\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ00wIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f10239f2035e57a6356ebbc581ff295c55833bf6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--b50863606d6ba2f597650ed7335384ba20cf4712/Resident_Evil_3.jpg\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 95.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1937\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm96IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8dee09bbfa8ec914438d449d7256a7db94ab5183/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--921aa4168288baa76b1e1581eb3aee5dc86a0e6e/RE2_remake_PS4_cover_art.png\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 90.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1936\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1935\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1934\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div role=\"navigation\" aria-label=\"Pagination\" class=\"d-flex gap-4 align-items-center justify-content-center my-5\">\n                        <span class=\"previous_page disabled\" aria-disabled=\"true\">&#8592; Previous</span>\n                        <a class=\"next_page\" rel=\"next\" href=\"/?page=2\">Next &#8594;</a>\n                    </div>\n                </div>\n            </section>\n            <div class=\"sticky-bottom d-flex align-items-center justify-content-center py-4\">\n                <a class=\"btn btn-primary btn-lg rounded-4 d-inline-flex align-items-center justify-content-space-between px-5\" href=\"/products/new\">\n                    <i class=\"bi bi-plus fs-2 me-3\"></i>\n                    <span class=\"fs-6\">Jual</span>\n                </a>\n            </div>\n        </section>\n    </body>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "Failed Login Wrong Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"email\": \"wewq@test.com\",\n        \"password\": \"\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlBinar}}/users/sign_in.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"users",
+								"sign_in.json"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"email\": \"rwibhiyanto@binaracademy.org\",\n        \"password\": \"passwordBinar\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baserUrlBinar}}/users/sign_in",
+									"host": [
+										"{{baserUrlBinar}}"
+									],
+									"path": [
+										"users",
+										"sign_in"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 May 2023 12:06:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Link",
+									"value": "</assets/application-8719702cfbda8df80ef05ec97d6e3439f691b635cf6f90772d44af13d07cdc5f.css>; rel=preload; as=style; nopush"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"584c5f9cf4726538e2b050a9f605c2cf\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "_binar_playground_secondhand_marketplace_session=Z1utVlezVBGDpxSa7734uuv7tsS9G5%2FcjbDsbPew7OmbFNm%2ByACYXtE1%2BPGaDrpH%2F18XWqiX65%2F81Jh5Sc3gb3ID0CkHEN0Lg5jLLxQ8fmPZ1bG3nqG0eT0fmNA1%2BxYFRWq5dAhTT4BV9NSH5DcTVRoL9eahiZto%2FGcNcyGQxpnLbGJk2fk50eRWTuveFq46%2F9Sh5wjOd5Bwa4yz7ety6DNgAirIPZpWD0uxymVpSm73sDJPqIiCAQ%2BGKKO3VAGTYjXNgEqLZe5RkClTSzksscCFDyffmi%2FNE8DzuvThp2FojUD0vB7XKO%2Fsm03O2g8Bx9d4S%2BkN4LA%3D--cwT0m18rX2139VSr--e9%2FRBhV9suAYi%2BPxatn6Yg%3D%3D; path=/; secure; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "0ee2812c-841f-496a-8845-cfd987bd192d"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.037802"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html>\n    <head>\n        <title>SecondHand</title>\n        <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n        <meta name=\"csrf-param\" content=\"authenticity_token\" />\n        <meta name=\"csrf-token\" content=\"HbU1b1cbZ-DINpI2Ah1Kt4tlkq2JM3tsyTCc4ZGZf778mVq4wP_8RiV5ouTJKkXRzLr2Kz41KP2qnCd2s1pxcQ\" />\n        <link rel=\"stylesheet\" href=\"/assets/application-8719702cfbda8df80ef05ec97d6e3439f691b635cf6f90772d44af13d07cdc5f.css\" media=\"all\" data-turbo-track=\"reload\" />\n        <script src=\"/assets/application-129503345137b5d28c19109dabc42b97ed2206ca1c50e66a68eac5b5353990e4.js\" data-turbo-track=\"reload\" defer=\"defer\"></script>\n    </head>\n    <body>\n        <nav class=\"navbar navbar-expand-lg navbar-light bg-white shadow fixed-top\">\n            <div class=\"container\">\n                <a class=\"navbar-brand px-5 py-3\" href=\"/\"></a>\n                <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <form class=\"d-flex ms-0 ms-lg-4 my-4 my-lg-0\" method=\"GET\" action=\"/\" role=\"search\">\n                        <div class=\"input-group rounded-pill bg-light p-1 search\">\n                            <input name=\"q\" class=\"form-control bg-transparent border-0 form-search\" type=\"search\" placeholder=\"Cari di sini ...\" aria-label=\"Search\" value=\"\">\n                            <i class=\"bi bi-search input-group-text bg-transparent border-0\"></i>\n                        </div>\n                    </form>\n                    <div class=\"ms-auto\">\n                        <a class=\"btn btn-primary\" href=\"/users/sign_in\">\n                            <i class=\"bi bi-arrow-bar-right\"></i>\n  Masuk\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </nav>\n        <section class=\"pt-5 mt-5\">\n            <section class=\"mt-lg-5 mb-5 w-100 d-flex gap-lg-5\">\n                <div class=\"promo left bg-success rounded-end flex-grow-1 align-self-center d-none d-lg-block\"></div>\n                <div class=\"promo center flex-grow-1 bg-warning rounded-lg-4 rounded-0\">\n                    <div class=\"row p-5\">\n                        <div class=\"col\">\n                            <h1 class=\"fw-bold mb-4\">Bulan Ramadhan\n                                <br>Banyak diskon!\n                            </h1>\n                            <h6 class=\"fs-5 fw-normal\" >Diskon Hingga</h6>\n                            <h5 class=\"display-6 text-danger fw-bold\">60%</h5>\n                        </div>\n                        <div class=\"col\">\n      </div>\n                    </div>\n                </div>\n                <div class=\"promo right bg-info rounded-start flex-grow-1 align-self-center d-none d-lg-block\"></div>\n            </section>\n            <section class=\"container\">\n                <h5 class=\"fw-bold mb-4\">Telusuri Kategori</h5>\n                <nav class=\"nav row gap-4 px-2 px-lg-0\">\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center active\" href=\"/\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n      Semua\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=1\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Hobi\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=2\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Kendaraan\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=3\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Baju\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=4\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Elektronik\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=5\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Kesehatan\n                    </a>\n                </nav>\n                <div class=\"row my-5 g-5\" id='products'>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1947\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">Tunik Motif</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 125.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1946\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">Tunik Motif</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 125.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1945\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaGcwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5a369465a8591754f1ee1d2823d8d36e8193c4d4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--921aa4168288baa76b1e1581eb3aee5dc86a0e6e/RE2_remake_PS4_cover_art.png\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 RE 2</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Hobi</p>\n                                    <h5 class=\"card-text\">Rp 111.111.111</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1943\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1939\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ0UwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a1b35d66963cc04e83a9d8934e102a2a9854e3c4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--b50863606d6ba2f597650ed7335384ba20cf4712/Resident_Evil_4.jpg\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 100.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1938\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ00wIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f10239f2035e57a6356ebbc581ff295c55833bf6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--b50863606d6ba2f597650ed7335384ba20cf4712/Resident_Evil_3.jpg\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 95.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1937\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm96IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8dee09bbfa8ec914438d449d7256a7db94ab5183/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--921aa4168288baa76b1e1581eb3aee5dc86a0e6e/RE2_remake_PS4_cover_art.png\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 90.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1936\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1935\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1934\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div role=\"navigation\" aria-label=\"Pagination\" class=\"d-flex gap-4 align-items-center justify-content-center my-5\">\n                        <span class=\"previous_page disabled\" aria-disabled=\"true\">&#8592; Previous</span>\n                        <a class=\"next_page\" rel=\"next\" href=\"/?page=2\">Next &#8594;</a>\n                    </div>\n                </div>\n            </section>\n            <div class=\"sticky-bottom d-flex align-items-center justify-content-center py-4\">\n                <a class=\"btn btn-primary btn-lg rounded-4 d-inline-flex align-items-center justify-content-space-between px-5\" href=\"/products/new\">\n                    <i class=\"bi bi-plus fs-2 me-3\"></i>\n                    <span class=\"fs-6\">Jual</span>\n                </a>\n            </div>\n        </section>\n    </body>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "Failed Login Wrong Email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"email\": \"test1237834@test.com\",\n        \"password\": \"asdf1234\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlBinar}}/users/sign_in.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"users",
+								"sign_in.json"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"email\": \"rwibhiyanto@binaracademy.org\",\n        \"password\": \"passwordBinar\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baserUrlBinar}}/users/sign_in",
+									"host": [
+										"{{baserUrlBinar}}"
+									],
+									"path": [
+										"users",
+										"sign_in"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 May 2023 12:06:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Link",
+									"value": "</assets/application-8719702cfbda8df80ef05ec97d6e3439f691b635cf6f90772d44af13d07cdc5f.css>; rel=preload; as=style; nopush"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"584c5f9cf4726538e2b050a9f605c2cf\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "_binar_playground_secondhand_marketplace_session=Z1utVlezVBGDpxSa7734uuv7tsS9G5%2FcjbDsbPew7OmbFNm%2ByACYXtE1%2BPGaDrpH%2F18XWqiX65%2F81Jh5Sc3gb3ID0CkHEN0Lg5jLLxQ8fmPZ1bG3nqG0eT0fmNA1%2BxYFRWq5dAhTT4BV9NSH5DcTVRoL9eahiZto%2FGcNcyGQxpnLbGJk2fk50eRWTuveFq46%2F9Sh5wjOd5Bwa4yz7ety6DNgAirIPZpWD0uxymVpSm73sDJPqIiCAQ%2BGKKO3VAGTYjXNgEqLZe5RkClTSzksscCFDyffmi%2FNE8DzuvThp2FojUD0vB7XKO%2Fsm03O2g8Bx9d4S%2BkN4LA%3D--cwT0m18rX2139VSr--e9%2FRBhV9suAYi%2BPxatn6Yg%3D%3D; path=/; secure; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "0ee2812c-841f-496a-8845-cfd987bd192d"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.037802"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html>\n    <head>\n        <title>SecondHand</title>\n        <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n        <meta name=\"csrf-param\" content=\"authenticity_token\" />\n        <meta name=\"csrf-token\" content=\"HbU1b1cbZ-DINpI2Ah1Kt4tlkq2JM3tsyTCc4ZGZf778mVq4wP_8RiV5ouTJKkXRzLr2Kz41KP2qnCd2s1pxcQ\" />\n        <link rel=\"stylesheet\" href=\"/assets/application-8719702cfbda8df80ef05ec97d6e3439f691b635cf6f90772d44af13d07cdc5f.css\" media=\"all\" data-turbo-track=\"reload\" />\n        <script src=\"/assets/application-129503345137b5d28c19109dabc42b97ed2206ca1c50e66a68eac5b5353990e4.js\" data-turbo-track=\"reload\" defer=\"defer\"></script>\n    </head>\n    <body>\n        <nav class=\"navbar navbar-expand-lg navbar-light bg-white shadow fixed-top\">\n            <div class=\"container\">\n                <a class=\"navbar-brand px-5 py-3\" href=\"/\"></a>\n                <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                    <form class=\"d-flex ms-0 ms-lg-4 my-4 my-lg-0\" method=\"GET\" action=\"/\" role=\"search\">\n                        <div class=\"input-group rounded-pill bg-light p-1 search\">\n                            <input name=\"q\" class=\"form-control bg-transparent border-0 form-search\" type=\"search\" placeholder=\"Cari di sini ...\" aria-label=\"Search\" value=\"\">\n                            <i class=\"bi bi-search input-group-text bg-transparent border-0\"></i>\n                        </div>\n                    </form>\n                    <div class=\"ms-auto\">\n                        <a class=\"btn btn-primary\" href=\"/users/sign_in\">\n                            <i class=\"bi bi-arrow-bar-right\"></i>\n  Masuk\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </nav>\n        <section class=\"pt-5 mt-5\">\n            <section class=\"mt-lg-5 mb-5 w-100 d-flex gap-lg-5\">\n                <div class=\"promo left bg-success rounded-end flex-grow-1 align-self-center d-none d-lg-block\"></div>\n                <div class=\"promo center flex-grow-1 bg-warning rounded-lg-4 rounded-0\">\n                    <div class=\"row p-5\">\n                        <div class=\"col\">\n                            <h1 class=\"fw-bold mb-4\">Bulan Ramadhan\n                                <br>Banyak diskon!\n                            </h1>\n                            <h6 class=\"fs-5 fw-normal\" >Diskon Hingga</h6>\n                            <h5 class=\"display-6 text-danger fw-bold\">60%</h5>\n                        </div>\n                        <div class=\"col\">\n      </div>\n                    </div>\n                </div>\n                <div class=\"promo right bg-info rounded-start flex-grow-1 align-self-center d-none d-lg-block\"></div>\n            </section>\n            <section class=\"container\">\n                <h5 class=\"fw-bold mb-4\">Telusuri Kategori</h5>\n                <nav class=\"nav row gap-4 px-2 px-lg-0\">\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center active\" href=\"/\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n      Semua\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=1\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Hobi\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=2\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Kendaraan\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=3\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Baju\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=4\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Elektronik\n                    </a>\n                    <a class=\"btn btn-alt-primary col rounded-4 py-2 px-4 d-inline-flex align-items-center false\" href=\"/?category_id=5\">\n                        <i class=\"bi bi-search me-3 fs-4\"></i>\n        Kesehatan\n                    </a>\n                </nav>\n                <div class=\"row my-5 g-5\" id='products'>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1947\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">Tunik Motif</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 125.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1946\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">Tunik Motif</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 125.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1945\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaGcwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5a369465a8591754f1ee1d2823d8d36e8193c4d4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--921aa4168288baa76b1e1581eb3aee5dc86a0e6e/RE2_remake_PS4_cover_art.png\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 RE 2</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Hobi</p>\n                                    <h5 class=\"card-text\">Rp 111.111.111</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1943\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1939\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ0UwIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a1b35d66963cc04e83a9d8934e102a2a9854e3c4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--b50863606d6ba2f597650ed7335384ba20cf4712/Resident_Evil_4.jpg\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 100.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1938\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ00wIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f10239f2035e57a6356ebbc581ff295c55833bf6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--b50863606d6ba2f597650ed7335384ba20cf4712/Resident_Evil_3.jpg\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 95.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1937\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"https://secondhand.binaracademy.org/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdm96IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8dee09bbfa8ec914438d449d7256a7db94ab5183/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUFXa0NBQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--921aa4168288baa76b1e1581eb3aee5dc86a0e6e/RE2_remake_PS4_cover_art.png\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">PS5 Resident Evil ...</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Kendaraan</p>\n                                    <h5 class=\"card-text\">Rp 90.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1936\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1935\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"col-12 col-md-4 col-lg-3\">\n                        <a class=\"product-card\" href=\"/products/1934\">\n                            <div class=\"card px-0 border-0 shadow h-100 pb-4 rounded-4\">\n                                <img alt=\"Download file\" class=\"card-img img-product-thumbnail p-3 rounded-4 overflow-hidden\" src=\"/placeholder.webp\" />\n                                <div class=\"card-body text-decoration-none\">\n                                    <h5 class=\"card-title\">lapton asus</h5>\n                                    <p class=\"card-text text-black-50 text-small\">Baju</p>\n                                    <h5 class=\"card-text\">Rp 10.000</h5>\n                                </div>\n                            </div>\n                        </a>\n                    </div>\n                    <div role=\"navigation\" aria-label=\"Pagination\" class=\"d-flex gap-4 align-items-center justify-content-center my-5\">\n                        <span class=\"previous_page disabled\" aria-disabled=\"true\">&#8592; Previous</span>\n                        <a class=\"next_page\" rel=\"next\" href=\"/?page=2\">Next &#8594;</a>\n                    </div>\n                </div>\n            </section>\n            <div class=\"sticky-bottom d-flex align-items-center justify-content-center py-4\">\n                <a class=\"btn btn-primary btn-lg rounded-4 d-inline-flex align-items-center justify-content-space-between px-5\" href=\"/products/new\">\n                    <i class=\"bi bi-plus fs-2 me-3\"></i>\n                    <span class=\"fs-6\">Jual</span>\n                </a>\n            </div>\n        </section>\n    </body>\n</html>"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Offers",
+			"item": [
+				{
+					"name": "Create Offer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var oData = pm.response.json();\r",
+									"var oid = oData.offer.id;\r",
+									"\r",
+									"pm.globals.set(\"oid\", oid);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"offer\": {\n    \"price\": 1000,\n    \"to_id\": 1,\n    \"product_id\": 1\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlBinar}}/offers.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"offers.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Offer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"offer\": {\n        \"price\": 1000000,\n        \"to_id\": 1,\n        \"product_id\": 1964\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlBinar}}/offers/:offerID.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"offers",
+								":offerID.json"
+							],
+							"variable": [
+								{
+									"key": "offerID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Offer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"offer\": {\n        \"price\": 1000,\n        \"to_id\": 1,\n        \"product_id\": 1\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlBinar}}/users/:userID/offers.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"users",
+								":userID",
+								"offers.json"
+							],
+							"variable": [
+								{
+									"key": "userID",
+									"value": "5866"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Update Profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Assert update profile\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(jsonData.user.name).to.eql(pm.request.body.formdata.get('user[name]'));\r",
+									"    pm.expect(jsonData.user.phone_number).to.eql(pm.request.body.formdata.get('user[phone_number]'));\r",
+									"    pm.expect(jsonData.user.address).to.eql(pm.request.body.formdata.get('user[address]'));\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user[name]",
+									"value": "Testing Users Updated",
+									"type": "text"
+								},
+								{
+									"key": "user[phone_number]",
+									"value": "08789978987",
+									"type": "text"
+								},
+								{
+									"key": "user[address]",
+									"value": "Jl. Tester 20",
+									"type": "text"
+								},
+								{
+									"key": "user[city_id]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "user[avatar]",
+									"type": "file",
+									"src": "/C:/Users/Marcel/Downloads/photo-1518355077561-4af7abce973d.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrlBinar}}/profiles.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"profiles.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlBinar}}/profiles.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"profiles.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var pData = pm.response.json();\r",
+									"var pid = pData.product.id;\r",
+									"\r",
+									"pm.globals.set(\"pid\", pid);\r",
+									"\r",
+									"pm.test(\"Assert create product\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.response.to.have.status(201);\r",
+									"    pm.expect(jsonData.product.id).to.eql(pid);\r",
+									"    pm.expect(jsonData.product.name).to.eql(pm.request.body.formdata.get('product[name]'));\r",
+									"    pm.expect(jsonData.product.price).to.eql(Number(pm.request.body.formdata.get('product[price]')));\r",
+									"    pm.expect(jsonData.product.description).to.eql(pm.request.body.formdata.get('product[description]'));\r",
+									"    pm.expect(jsonData.product.category_id).to.eql(Number(pm.request.body.formdata.get('product[category_id]')));\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product[name]",
+									"value": "Laptop 14\" 2023",
+									"type": "text"
+								},
+								{
+									"key": "product[price]",
+									"value": "5000000",
+									"type": "text"
+								},
+								{
+									"key": "product[description]",
+									"value": "Laptop 14\" 2023",
+									"type": "text"
+								},
+								{
+									"key": "product[status]",
+									"value": "published",
+									"type": "text"
+								},
+								{
+									"key": "product[category_id]",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "product[images]",
+									"type": "file",
+									"src": "/C:/Users/Marcel/Downloads/photo-1518355077561-4af7abce973d.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrlBinar}}/products.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"products.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlBinar}}/products.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"products.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlBinar}}/products/{{pid}}.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"products",
+								"{{pid}}.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var pData = pm.response.json();\r",
+									"var pid = pData.product.id;\r",
+									"\r",
+									"pm.globals.set(\"pid\", pid);\r",
+									"\r",
+									"pm.test(\"Assert update product\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(jsonData.product.id).to.eql(pid);\r",
+									"    pm.expect(jsonData.product.name).to.eql(pm.request.body.formdata.get('product[name]'));\r",
+									"    pm.expect(jsonData.product.price).to.eql(Number(pm.request.body.formdata.get('product[price]')));\r",
+									"    pm.expect(jsonData.product.description).to.eql(pm.request.body.formdata.get('product[description]'));\r",
+									"    pm.expect(jsonData.product.category_id).to.eql(Number(pm.request.body.formdata.get('product[category_id]')));\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product[name]",
+									"value": "Laptop Acer Nitro 2023",
+									"type": "text"
+								},
+								{
+									"key": "product[price]",
+									"value": "10000000",
+									"type": "text"
+								},
+								{
+									"key": "product[description]",
+									"value": "Non suscipit deleniti. Blanditiis omnis nobis. Similique quia id.",
+									"type": "text"
+								},
+								{
+									"key": "product[status]",
+									"value": "published",
+									"type": "text"
+								},
+								{
+									"key": "product[category_id]",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "product[images]",
+									"type": "file",
+									"src": "/C:/Users/Marcel/Downloads/photo-1518355077561-4af7abce973d.jpeg"
+								},
+								{
+									"key": "product[persisted_images]",
+									"type": "file",
+									"src": "/C:/Users/Marcel/Downloads/photo-1518355077561-4af7abce973d.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrlBinar}}/products/{{pid}}.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"products",
+								"{{pid}}.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlBinar}}/products/{{pid}}.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"products",
+								"{{pid}}.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get Category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ODY2Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjg0MzM1MDQwLCJleHAiOjE2ODU1NDQ2NDAsImp0aSI6ImNhM2Q3NDUyLTEwMzQtNDMyOC05YTE1LTBlOTJjZmIxYWMxYyJ9.A_G9Tosn3k6GgE599vnzwGREv9ytwTKQWkxKvZ5OyyA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlBinar}}/categories/1.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"categories",
+								"1.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlBinar}}/categories.json",
+							"host": [
+								"{{baseUrlBinar}}"
+							],
+							"path": [
+								"categories.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
